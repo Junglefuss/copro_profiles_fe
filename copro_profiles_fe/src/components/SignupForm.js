@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 
-class SignupForm extends React.Component {
+class SignupForm extends Component {
   state = {
     username: '',
     password: ''
@@ -43,6 +43,6 @@ class SignupForm extends React.Component {
 
 export default SignupForm;
 
-SignupForm.propTypes = {
-  handle_signup: PropTypes.func.isRequired
-};
+// SignupForm.propTypes = {
+//   handle_signup: PropTypes.func.isRequired
+// };

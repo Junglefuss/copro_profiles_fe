@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+// import PropTypes from 'prop-types';
 
-class LoginForm extends React.Component {
+class LoginForm extends Component {
   state = {
     username: '',
     password: ''
@@ -43,6 +43,6 @@ class LoginForm extends React.Component {
 
 export default LoginForm;
 
-LoginForm.propTypes = {
-  handle_login: PropTypes.func.isRequired
-};
+// LoginForm.propTypes = {
+//   handle_login: PropTypes.func.isRequired
+// };
