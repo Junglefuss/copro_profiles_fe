@@ -18,5 +18,123 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  /* color: #09d3ac; */
+}
+
+body {
+  background-color: white;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.header > a > img {
+  width: 300px;
+  float: left;
+  /* justify-content: flex-start; */
+}
+
+.header > .navcontainer {
+  display: flex;
+  justify-content: center;
+  /* padding: 15px 0 0 0; */
+  /* background-color: yellow; */
+  align-self: center;
+  height: 100px;
+}
+
+.navitem {
+  /* flex: 1; */
+  /* align-content: flex-start; */
+  /* flex-direction: row; */
+  text-decoration: none;
+  margin: 15px 0 0 0;
+  padding: 12px;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 4px;
+  color: rgb(69, 191, 180);
+  /* background-color: lightblue; */
+}
+
+.navitem:hover,
+#active {
+  color: rgb(125, 127, 128);
+}
+
+.Login {
+  font-size: 11px;
+  float: right;
+  /* background-color: orange; */
+  padding: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  z-index: 10;
+  /* border: 1px solid gray; */
+}
+
+.login_nav_container {
+  /* background-color: green; */
+}
+
+.login_form {
+  background-color: grey;
+  /* padding: 3px; */
+}
+
+.login_nav {
+  padding: 0 3px 0 3px;
+}
+
+.main {
+  color: rgb(125, 127, 128);
+  margin: 20px;
+}
+
+.form {
+  padding: 10px 20px 10px 20px;
+  margin: 5px;
+  line-height: 50px;
+  /* background-color: green; */
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+input {
+  padding: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
+}
+
+.button {
+  background-color: rgb(255, 128, 0);
+  padding: 10px 15px 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.hero_img {
+  max-width: 100%;
+  height: auto;
+}
+
+.profile {
+  display: grid;
+  border: 1px solid gray;
+}
+
+.column-1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  /* background-color: black; */
+}
+
+.column-2 {
+  grid-column-start: 2;
+  grid-column-end: 10;
+  /* background-color: pink; */
+}
+
+.footer {
+  text-align: center;
+  /* bottom: 0px; */
+  font-size: 12px;
 }

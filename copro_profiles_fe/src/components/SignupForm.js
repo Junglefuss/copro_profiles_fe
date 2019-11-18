@@ -19,7 +19,7 @@ class SignupForm extends Component {
 
   render() {
     return (
-      <form onSubmit={e => this.props.handle_signup(e, this.state)}>
+      <form className="login_form" onSubmit={e => this.props.handle_signup(e, this.state)}>
         <h4>Sign Up</h4>
         <label htmlFor="username">Username</label>
         <input

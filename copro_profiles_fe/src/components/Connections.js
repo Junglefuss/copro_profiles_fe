@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
 
-class Team extends Component {
-  // constructor()
-
+export class Connections extends Component {
   render() {
     return (
       <div>
-        <h1>Team</h1>
+        <h1>Connections</h1>
       </div>
     );
   }
 }
 
-export default Team;
+export default Connections;

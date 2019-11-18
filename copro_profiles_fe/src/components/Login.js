@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
-// import './App.css';
-
-// function Login(props) {
-//   return <div>{props.logged_in ? logged_in_nav : logged_out_nav}</div>;
-// }
-
-// export default Login;
+import LoginNav from './LoginNav';
 
 class Login extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       displayed_form: '',
       logged_in: localStorage.getItem('token') ? true : false,
@@ -86,26 +79,16 @@ class Login extends Component {
   };
 
   render() {
-    const logged_out_nav = (
-      <ul>
-        <li onClick={() => this.state.display_form('login')}>login</li>
-        <li onClick={() => this.state.display_form('signup')}>signup</li>
-      </ul>
-    );
-
-    const logged_in_nav = (
-      <ul>
-        <li onClick={this.state.handle_logout}>logout</li>
-      </ul>
-    );
+    let username = this.state.username;
+    console.log({ username });
 
     let form;
     switch (this.state.displayed_form) {
       case 'login':
-        form = <LoginForm handle_login={this.handle_login} />;
+        form = <LoginForm className="authform" handle_login={this.handle_login} />;
         break;
       case 'signup':
-        form = <SignupForm handle_signup={this.handle_signup} />;
+        form = <SignupForm className="authform" handle_signup={this.handle_signup} />;
         break;
       default:
         form = null;
@@ -113,22 +96,26 @@ class Login extends Component {
 
     return (
       <div className="Login">
-        <Login
-          logged_in={this.state.logged_in}
-          display_form={this.display_form}
-          handle_logout={this.handle_logout}
-        />
         {form}
-        <h3>{this.state.logged_in ? `Hello, ${this.state.username}` : 'Please Log In'}</h3>
+        <div>
+          {this.state.logged_in ? (
+            `User: ${this.state.username}`
+          ) : (
+            <LoginNav
+              logged_in={this.state.logged_in}
+              display_form={this.display_form}
+              handle_logout={this.handle_logout}
+            />
+          )}
+          <LoginNav
+            logged_in={this.state.logged_in}
+            display_form={this.display_form}
+            handle_logout={this.handle_logout}
+          />
+        </div>
       </div>
     );
   }
 }
 
 export default Login;
-
-// Login.propTypes = {
-//   logged_in: PropTypes.bool.isRequired,
-//   display_form: PropTypes.func.isRequired,
-//   handle_logout: PropTypes.func.isRequired
-// };
