@@ -1,4 +1,4 @@
-<a href="https://coproductions.com/"><img src="./copro_profiles_fe/src/images/coproductions-logo.png" width=200px  /></a>
+<a href="https://coproductions.com/"><img src="./images/coproductions-logo.png" width=200px  /></a>
 
 # Coproductions Profiles Platform
 
@@ -7,7 +7,7 @@
 This is a full stack application built with Django, PostgresQL, node.js, and React. The functions it will someday provide include signing up for the Coproductions network as an individual or representative of a team, adding links and images to resume and portfolio website, and connecting to other people and teams. As of now, it does none of these things. But we're getting there!
 
 It is a thing though:
-<img src="copro_profiles_fe/src/images/Screen Shot 2019-11-19 at 11.18.48 AM.png">
+<img src="./images/Screen Shot 2019-11-19 at 11.18.48 AM.png">
 
 ## Technologies
 
@@ -36,14 +36,14 @@ It is a thing though:
 - Account Login/Logout (top right of homepage)
 
 - Member Profile Creation
-  <img src="copro_profiles_fe/src/images/Screen Shot 2019-11-19 at 11.19.53 AM.png" />
+  <img src="./images/Screen Shot 2019-11-19 at 11.19.53 AM.png" />
 
 - Member Profile Display
   - no images yet
   - name, skills, contact information are all successfully acquired from the backend
   - Portfolios, Teams, and Connections should be generated through separate components, which are also receiving the correct data.
   - However, I have not yet been able to iterate through those data to return the right displayed value.
-    <img src="copro_profiles_fe/src/images/Screen Shot 2019-11-19 at 11.19.39 AM.png" />
+    <img src="./images/Screen Shot 2019-11-19 at 11.19.39 AM.png" />
 
 ## Repositories
 
