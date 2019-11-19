@@ -62,11 +62,11 @@ It is a thing though:
 
 #### Django Worker Model
 
-<img src="copro_profiles_fe/src/images/Screen Shot 2019-11-19 at 12.42.18 PM.png" />
+<img src="./images/Screen Shot 2019-11-19 at 12.42.18 PM.png" />
 
 #### React App.js
 
-<img src="copro_profiles_fe/src/images/Screen Shot 2019-11-19 at 12.42.18 PM.png" />
+<img src="./images/Screen Shot 2019-11-19 at 12.42.18 PM.png" />
 
 ## Contact and Contribute
 
