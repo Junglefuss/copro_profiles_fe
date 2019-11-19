@@ -53,15 +53,14 @@ class Profile extends Component {
             </h3>
             <h2>Skills:</h2>
             <div>{this.state.profile.skills}</div>
-            <h2>Portfolio & Resume Websites:</h2>
-            <Portfolios user_id={this.state.profile.user_id} />
+            <Portfolios worker_links={this.state.profile.worker_links} />
             <h2>Teams:</h2>
             <div>
-              <Teams />
+              <Teams user_id={this.props.user_id} />
             </div>
             <h2>Connections:</h2>
             <div>
-              <Connections />
+              <Connections connections={this.state.profile.connections} />
             </div>
           </div>
         </div>

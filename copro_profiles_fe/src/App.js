@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
-// Redirect
 import Login from './components/Login';
-// import LoginForm from './components/LoginForm';
-// import SignupForm from './components/SignupForm';
 import Profile from './components/Profile';
 import TeamHome from './components/TeamHome';
 import ProfileForm from './components/ProfileForm';
@@ -28,11 +25,9 @@ class App extends Component {
       username: evt.user.username,
       user_id: evt.user.id
     });
-    // console.log(this.state.user_id);
   }
 
   render() {
-    // console.log(this.state.user_id);
     return (
       <div className="app">
         <div className="header">
