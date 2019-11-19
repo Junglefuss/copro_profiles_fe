@@ -3,10 +3,10 @@ import React from 'react';
 function LoginNav(props) {
   const logged_out_nav = (
     <div>
-      <button class="login_nav" onClick={() => props.display_form('login')}>
+      <button className="login_nav" onClick={() => props.display_form('login')}>
         login
       </button>
-      <button class="login_nav" onClick={() => props.display_form('signup')}>
+      <button className="login_nav" onClick={() => props.display_form('signup')}>
         signup
       </button>
     </div>

@@ -20,7 +20,7 @@ class LoginForm extends Component {
   render() {
     return (
       <form className="login_form" onSubmit={e => this.props.handle_login(e, this.state)}>
-        <h4>Log In</h4>
+        <h3>Log In</h3>
         <label htmlFor="username">Username</label>
         <input
           type="text"

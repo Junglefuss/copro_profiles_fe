@@ -4,15 +4,18 @@ import Teams from './Teams';
 import Connections from './Connections';
 
 class Profile extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
+      user_id: this.props.user_id,
       profile: {}
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/api/workers/1/', {
+    console.log(this.state.user_id);
+    let id = this.state.user_id;
+    fetch(`http://localhost:8000/api/workers/${id}/`, {
       headers: {
         Authorization: `JWT ${localStorage.getItem('token')}`
       }
@@ -25,11 +28,11 @@ class Profile extends Component {
 
   render() {
     console.log(this.state.profile);
-
+    console.log(this.props);
     return (
       <div>
         <h1>Your Profile</h1>
-        <div class="profile">
+        <div className="profile">
           <div className="column-1">
             <img
               src={this.state.profile.headshot}
@@ -51,7 +54,7 @@ class Profile extends Component {
             <h2>Skills:</h2>
             <div>{this.state.profile.skills}</div>
             <h2>Portfolio & Resume Websites:</h2>
-
+            <Portfolios user_id={this.state.profile.user_id} />
             <h2>Teams:</h2>
             <div>
               <Teams />

@@ -9,8 +9,13 @@ class Login extends Component {
     this.state = {
       displayed_form: '',
       logged_in: localStorage.getItem('token') ? true : false,
-      username: ''
+      username: this.props.username,
+      user_id: this.props.id
     };
+    this.handle_login = this.handle_login.bind(this);
+    this.handle_signup = this.handle_signup.bind(this);
+    this.handle_logout = this.handle_logout.bind(this);
+    this.display_form = this.display_form.bind(this);
   }
 
   componentDidMount() {
@@ -22,13 +27,18 @@ class Login extends Component {
       })
         .then(res => res.json())
         .then(json => {
-          this.setState({ username: json.username });
+          this.setState({ username: this.props.username });
+        })
+        .then(json => this.props.storeLogin(json))
+        .catch(function(error) {
+          console.log(error);
         });
     }
   }
 
-  handle_login = (e, data) => {
+  handle_login(e, data) {
     e.preventDefault();
+    console.log(data);
     fetch('http://localhost:8000/token-auth/', {
       method: 'POST',
       headers: {
@@ -39,15 +49,16 @@ class Login extends Component {
       .then(res => res.json())
       .then(json => {
         localStorage.setItem('token', json.token);
+        this.props.storeLogin(json);
         this.setState({
           logged_in: true,
-          displayed_form: '',
-          username: json.username
+          displayed_form: ''
         });
       });
-  };
+  }
 
-  handle_signup = (e, data) => {
+  handle_signup(e, data) {
+    console.log(data);
     e.preventDefault();
     fetch('http://localhost:8000/accounts/users/', {
       method: 'POST',
@@ -65,22 +76,22 @@ class Login extends Component {
           username: json.username
         });
       });
-  };
+  }
 
-  handle_logout = () => {
+  handle_logout() {
     localStorage.removeItem('token');
     this.setState({ logged_in: false, username: '' });
-  };
+  }
 
-  display_form = form => {
+  display_form(form) {
     this.setState({
       displayed_form: form
     });
-  };
+  }
 
   render() {
-    let username = this.state.username;
-    console.log({ username });
+    let props = this.props;
+    console.log({ props });
 
     let form;
     switch (this.state.displayed_form) {
@@ -99,7 +110,7 @@ class Login extends Component {
         {form}
         <div>
           {this.state.logged_in ? (
-            `User: ${this.state.username}`
+            `User: ${props.username}`
           ) : (
             <LoginNav
               logged_in={this.state.logged_in}
